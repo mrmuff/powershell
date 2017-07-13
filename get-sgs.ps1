@@ -11,9 +11,10 @@ clear
 write "" | out-file -FilePath c:\out.txt
 
 $mygroups = Get-EC2SecurityGroup 
-
+# Write-Host $variable.Replace("`n", "")
 foreach ($mygroup in $mygroups) {
     Get-EC2SecurityGroup $mygroup.GroupId 
+    # Write-Host $variable.Replace("`n", "")
     write $label $mygroup.GroupName | tee C:\Out.txt -Append
     $mygroup | select-object -ExpandProperty IpPermissions | tee c:\out.txt -Append 
     }
