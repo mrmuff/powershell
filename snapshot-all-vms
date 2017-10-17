@@ -1,0 +1,7 @@
+
+$vmservers = Get-VM -Location fakecluster
+
+foreach ($vmserver in $vmservers) {
+    $date = get-date -Format "ddMMyyyyHHmmss"
+    New-Snapshot -VM $vmserver -Name ($vmserver.Name.ToString() + "_snapshot_$date") -Confirm:$false
+}
