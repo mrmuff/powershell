@@ -1,0 +1,19 @@
+Test-Path "Registry::HKLM\System\CurrentControlSet\Services\W32Time\Parameters\"
+True
+
+
+$path = "Registry::HKLM\System\CurrentControlSet\Services\W32Time\Parameters\"
+
+
+Get-ItemProperty $path
+
+
+PSPath                 : Microsoft.PowerShell.Core\Registry::HKLM\System\CurrentControlSet\Services\W32Time\Parameters\
+PSParentPath           : Microsoft.PowerShell.Core\Registry::HKLM\System\CurrentControlSet\Services\W32Time
+PSChildName            : Parameters
+PSProvider             : Microsoft.PowerShell.Core\Registry
+ServiceDllUnloadOnStop : 1
+ServiceMain            : SvchostEntry_W32Time
+ServiceDll             : C:\Windows\system32\w32time.DLL
+Type                   : NTP
+NtpServer              : 0.0.0.0,0x8
